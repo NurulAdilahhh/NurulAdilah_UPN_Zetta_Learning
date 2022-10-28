@@ -1,0 +1,43 @@
+body {
+    background-color: blanchedalmond;
+    color: blueviolet;
+    text-align: center;
+}
+
+h1 {
+    text-align:center;
+}
+
+.container {
+    text-align: center;
+    padding-left: 400px;
+    height: 300px
+}
+
+.container>div {
+    border: solid rgb(215, 134, 12);
+    margin: 2rem;
+    width: 700px;
+    overflow-y: scroll;
+    height: 50%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    line-height: 40px;
+}
+
+li:nth-child(odd) {
+    background-color: aqua;
+    color: white;
+}
+
+li:nth-child(even) {
+    background : rgb(200, 10, 243)
+    color: white;
+}
