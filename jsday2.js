@@ -1,25 +1,47 @@
-function bookPurchasing(book, discount, tax)
- {
-     let result = 0;
-     if(book && book.price && book.title)
-     {
-         const prc = book.price;
-         const totDisc = prc *(discount/100);
-         const prcDisc = prc - totDisc;
-         const Tax = prcDisc * (tax/100);
-         const prcTax = prcDisc - Tax;
- 
-         console.group();
-         console.log('Book Title           :', book.title);
-         console.log('Price                : RP.', prc);
-         console.log('Discount             :', discount,'%');
-         console.log('Tax                  :', tax,'%');
-         console.log('Price After Discount : Rp.', prcDisc);
-         console.log('tax deductible price : RP.', prcTax);
-         console.log('Total                : Rp.', prcTax);
-         console.groupEnd();
- 
-     }
-     return result;
- }
- bookPurchasing({title : 'Rindu', price: 10000, printing_status: true}, 10, 10);
+function bookPurchasing(book, disc, tax, stock, order) {
+    let result = 0;
+    let price = 0;
+    let AmountDisc;
+    let AmountTax;
+    let Tot;
+
+    for (let i = 0; i < order; i++) {
+        if (book && book.price && book.title && i < stock) {
+            const prc = book.price;
+            const totDisc = prc * (disc/100);
+            const prcDisc = prc - totDisc;
+            const Tax = prcDisc * (tax/100);
+            const prcTax = prcDisc - tax;
+            const prcTot = order * prcTax;
+            result += prcTot;
+
+            price = prc;
+            AmountDisc = prcDisc;
+            AmountTax = prcTax;
+            Tot = prcTot;
+
+
+        }
+        else {
+            console.log('Stock Buku', book.title, 'Kosong');
+            break;
+        }
+    }
+
+    console.group();
+    console.log('Title Book             :', book.title);
+    console.log('Price                  :', price);
+    console.log('Discoun                :', disc, '%');
+    console.log('Tax                    :', tax,'%');
+    console.log('Price After Discount   : RP.', AmountDisc);
+    console.log('price at withholding tax : Rp.', AmountTax);
+    console.log('Total                     : Rp.', order);
+    console.log('Price total            :Rp.', Tot);
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    console.groupEnd();
+
+    return result;
+}   
+bookPurchasing(
+    {title: "Aku Kamu dan Kita", price:10000, printing_status: true},10,10,6,1);
