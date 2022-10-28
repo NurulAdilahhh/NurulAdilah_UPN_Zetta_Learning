@@ -43,5 +43,21 @@ function bookPurchasing(book, disc, tax, stock, order) {
 
     return result;
 }   
-bookPurchasing(
-    {title: "Aku Kamu dan Kita", price:10000, printing_status: true},10,10,6,1);
+
+function Crediting(result, installment)
+{
+    creditOfMonth = result/installment;
+    CreditPayments = [];
+    for(let i = 0; i < installment; i++)
+    {
+        CreditPayments.push(
+            {
+                installment: i+1,
+                price:  creditOfMonth
+            }
+        )
+    }
+    return CreditPayments;
+}
+
+console.log(Crediting(bookPurchasing({title: "Aku Kamu dan Kita", price:10000, printing_status: true},10,10,6,1),1));
