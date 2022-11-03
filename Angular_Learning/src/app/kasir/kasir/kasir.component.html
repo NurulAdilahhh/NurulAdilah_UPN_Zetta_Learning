@@ -1,5 +1,9 @@
 <menu>
     <section>
+        <li *ngFor="let items of items">
+                    <h2>{{ items.name }}</h2>
+                    <h3>{{ items.Price }}</h3>
+        </li>
         <app-item [items]="items"(itemAdded)="addItem($event)"></app-item>
     </section>
     <aside>
