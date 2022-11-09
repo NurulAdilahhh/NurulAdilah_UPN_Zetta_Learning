@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { KasirComponent } from './kasir/kasir.component'; 
+import { KasirComponent } from './kasir/kasir.component';
 
 const routes: Routes = [
   {
-    path :'',
+    path: '',
     pathMatch:'full',
-    component:KasirComponent
-  
+    component: KasirComponent
   },
   {
-    path:'**',
+    path: '**',
     pathMatch:'full',
     redirectTo:''
   }
-  
 ];
 
 @NgModule({

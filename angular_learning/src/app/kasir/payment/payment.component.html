@@ -1,6 +1,7 @@
-<p>payment works!</p>
+
 <h1>Payment</h1>
-<table>
+<table #bgAqua>
+
     <tr *ngFor = "let item of items">
         <td><span>{{ item.amount }} x {{item.name}}</span></td>
         <td><span>Rp. {{item.Price}}</span> </td>
@@ -11,10 +12,10 @@
     <tr class="tot" >
         <ng-template *ngIf="items.length >0 then totalPayment; else noItem"></ng-template>
         <ng-template #totalPayment >
-        <td colspan="3"> Total : Rp.{{total}}</td>
+        <td colspan="3" bgGreen > Total : Rp.{{total}}</td>
     </ng-template>
-    <ng-template #noItem >
-        <td  > No Item Selected</td>
+    <ng-template #noItem  >
+        <td > Tidak Ada Pesanan</td>
     </ng-template>
     </tr>
 </table>

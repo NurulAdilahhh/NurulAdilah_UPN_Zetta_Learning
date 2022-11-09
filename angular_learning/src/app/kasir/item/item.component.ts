@@ -1,23 +1,37 @@
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { item } from '../kasir/kasir.component';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Item } from '../kasir/kasir.component';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  styleUrls: ['./item.component.scss'],
+  styles:['[bgaq]{  background-color: aquamarine;}',
+  '[coba]{background: red; color: white}'
+
+]
 })
-export class ItemComponent implements OnInit {
-  @Input('items') items: item[]=[]
-  @Output ('itemAdded') onAddItem : EventEmitter<item> = new EventEmitter<item>()
+export class ItemComponent implements OnInit ,AfterViewInit {
+  @Input('items') items: Item[]=[]
+  @Output('itemAdded') onAddItem: EventEmitter<Item> = new EventEmitter<Item>();
+  @ViewChild('bgaq') bgaq?:ElementRef;
+  @ViewChild('al') bgRed?:ElementRef;
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addItem(item :item) : void{
-    this.onAddItem.emit(item)
+  addItem(item: Item): void {
+  this.onAddItem.emit(item)
   }
 
+  ngAfterViewInit(){
+
+    this.bgaq?.nativeElement.setAttribute('bgaq', '');
+    this.bgRed?.nativeElement.setAttribute('coba', '');
+   
+  }
 }
+
