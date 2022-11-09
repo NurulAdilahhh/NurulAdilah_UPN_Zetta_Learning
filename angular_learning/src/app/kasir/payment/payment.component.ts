@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, ViewChild, ElementRef, AfterContentChecked, AfterViewInit,  } from '@angular/core';
 import { SelectedItem } from '../kasir/kasir.component';
 
@@ -25,18 +26,22 @@ public total :number = 0;
   ngOnInit(): void {
   }
 
+
   ngAfterViewInit(): void {
     this.bgAqua?.nativeElement.setAttribute('bgAqua', '');
     this.bgGreen?.nativeElement.setAttribute('bgGreen', ''); 
   }
 
-   ngAfterContentChecked(): void {
+  
+  ngAfterContentChecked(): void {
+
  
     this.total = this.items.reduce((total, item) => total += item.amount * item.Price , 0)
   }
 
  
   removeItem(itemToBeRemoved:SelectedItem){
+
     const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
   
     if(this.items[itemIndex].amount>1){
@@ -46,8 +51,6 @@ public total :number = 0;
       this.items.splice(itemIndex,1);
     }
   }
-
 }
-
 
 

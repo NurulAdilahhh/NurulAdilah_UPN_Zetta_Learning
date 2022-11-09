@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Item } from '../kasir/kasir.component';
 
@@ -16,10 +17,10 @@ export class ItemComponent implements OnInit ,AfterViewInit {
   @ViewChild('bgaq') bgaq?:ElementRef;
   @ViewChild('al') bgRed?:ElementRef;
 
+
   constructor() { }
 
   ngOnInit(): void {
-    //console.log(this.items);
   }
 
   addItem(item: Item): void {
@@ -33,3 +34,4 @@ export class ItemComponent implements OnInit ,AfterViewInit {
    
   }
 }
+

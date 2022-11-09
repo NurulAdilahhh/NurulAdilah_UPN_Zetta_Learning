@@ -1,8 +1,12 @@
+
 <main>
     <section>
         <app-item [items]="items" (itemAdded)="addItem($event)"></app-item>
+
     </section>
     <aside>
         <app-payment [items]="selectedItems"></app-payment>
     </aside>
-</main>
+</main>    
+
+

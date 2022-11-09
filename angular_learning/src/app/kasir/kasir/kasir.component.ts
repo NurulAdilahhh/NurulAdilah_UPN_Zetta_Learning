@@ -1,12 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
 export interface Item {id : number , name : string , Price : number}
 export interface SelectedItem {id : number , name : string , Price : number, amount : number}
+
 
 @Component({
   selector: 'app-kasir',
   templateUrl: './kasir.component.html',
   styleUrls: ['./kasir.component.scss']
 })
+
 
 export class KasirComponent implements OnInit {
   
@@ -24,13 +27,18 @@ export class KasirComponent implements OnInit {
   ]
   public selectedItems: SelectedItem[] = []
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
   addItem(item :Item){
     const duplicated =this.selectedItems.findIndex(({id})   =>id=== item.id)
+  addItem(item : item){
+    const duplicated =this.selectedItems.findIndex(({id}) =>id=== item.id)
+
 
     if(duplicated>=0){
       this.selectedItems[duplicated].amount +=1
@@ -39,8 +47,10 @@ export class KasirComponent implements OnInit {
       this.selectedItems.push({...item, amount: 1})
     }
 
+
   }
     }
   
+
 
 
