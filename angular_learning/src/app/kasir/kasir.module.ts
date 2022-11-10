@@ -9,6 +9,7 @@ import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
+
     KasirComponent,
     PaymentComponent,
     ItemComponent

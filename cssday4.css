@@ -1,0 +1,134 @@
+body{
+    background-color: lightyellow;
+    color: rgb(21, 211, 233);
+}
+
+h1 {
+    position:fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: blueviolet;
+    z-index: 1;
+}
+
+p {
+    color: blueviolet;
+}
+
+.tlc {
+    text-align: center;
+}
+
+.grid-3 {
+    grid-template-columns: auto auto auto;
+}
+
+.grid-2 {
+    grid-template-columns: auto auto;
+}
+
+.product {
+    display: grid;
+    padding-top: 50;
+}
+
+.product>div {
+    width: 300px;
+    transition: 0.2s;
+    background-color: aquamarine;
+    border-radius: 10%;
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+h3{color: blueviolet;}
+
+img{
+    margin-bottom: 20px;
+    height: 250px;
+    width: 200px;
+    border-color: aquamarine;
+    border: solid ;
+}
+
+.product>div:hover {
+    transition: 0.2s;
+    background-color: darkcyan;
+    transform: scale(1.05);
+    color:aquamarine
+}
+
+.product>div:hover>p {
+    color: aqua;
+}
+
+.product>div:hover>h2{
+    color: aqua;
+}
+
+.product>div:hover>img {
+    border-color: aquamarine;
+}
+
+div,
+div:nth-child(n+1) {
+    margin-top: 0px;
+}
+
+div:nth-child(n+4) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div:nth-child(n+7) {
+    margin-top: 1rem;
+    margin-bottom   : 1rem;
+}
+
+div:nth-child(n+10) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div:nth-child(n+13) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div:nth-child(n+16) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+footer {
+    background-color: aquamarine;
+    border: solid;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.fbutton {
+    height: 40px;
+    display: grid;
+
+}
+
+a {
+    font-size: 30px;
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.fbutton>a:hover>div {
+    background-color: yellow;
+    
+}
