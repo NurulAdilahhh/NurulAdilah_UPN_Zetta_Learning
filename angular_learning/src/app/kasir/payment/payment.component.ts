@@ -1,56 +1,44 @@
 
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { map, Observable, pipe } from 'rxjs';
+import { KasirService, Selecteditem } from '../kasir.service';
 
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, ViewChild, ElementRef, AfterContentChecked, AfterViewInit,  } from '@angular/core';
-import { SelectedItem } from '../kasir/kasir.component';
+
 
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss'],
-  styles : ['[bgAqua]{ Background-color: antiquewhite;}',
-            '[bgPuprple]{background-color: aquamarine}'
-],
-
+  styleUrls: ['./payment.component.scss']
 })
+export class PaymentComponent implements OnInit,AfterContentChecked {
+  public items : Observable<Selecteditem[]>
+  public total : Observable<number>
 
-export class PaymentComponent implements OnInit,AfterContentChecked,AfterViewInit {
-
-@ViewChild('bgAqua') bgAqua?:ElementRef;
-@Input() items: SelectedItem[]=[]
-@Output() itemsChange : EventEmitter<SelectedItem[]> = new EventEmitter <SelectedItem[]>()
-@ViewChild('bgGreen') bgGreen?:ElementRef;
-public total :number = 0;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private kasirService : KasirService) { 
+    console.log("hahaha");
+    
+     this.items = this.kasirService.selectedItems$
+     this.total = this.kasirService.selectedItems$.pipe(
+      map((items) => items.reduce((total, item) => total += item.amount * item.Price , 0))
+    )
+     
   }
-
-
-  ngAfterViewInit(): void {
-    this.bgAqua?.nativeElement.setAttribute('bgAqua', '');
-    this.bgGreen?.nativeElement.setAttribute('bgGreen', ''); 
-  }
-
   
-  ngAfterContentChecked(): void {
-
- 
-    this.total = this.items.reduce((total, item) => total += item.amount * item.Price , 0)
+ngOnInit(): void {
   }
-
  
-  removeItem(itemToBeRemoved:SelectedItem){
-
-    const itemIndex = this.items.findIndex(({id}) => id ===itemToBeRemoved.id)
   
-    if(this.items[itemIndex].amount>1){
-      this.items[itemIndex].amount-=1
-    }
-    else{
-      this.items.splice(itemIndex,1);
-    }
+  ngAfterContentChecked() {
+    
+    this.total = this.kasirService.selectedItems$.pipe(
+      map((items) => items.reduce((total, item) => total += item.amount * item.Price , 0))
+    )
+    
+    
   }
+
+removeitem(item :Selecteditem){
+  this.kasirService.removeItem(item)
 }
 
-
+}

@@ -1,11 +1,11 @@
 
-<h2>Item</h2>
-<div class="item">
-    <div *ngFor = "let item of items" (click)="addItem(item)">
-    <div class="item">
-        <h3>{{ item.name }}</h3>
-        <p>Rp. {{ item.Price }}</p>
-    </div>
-    </div>
-</div>
+<h1>List Item</h1>
+<ul>
+    <li *ngFor="let item of (items | async)  "  (click)="addItem(item)" >
+        <h3>{{ item.name}}</h3>
+        <p>
+            Rp. {{item.Price}}
+        </p>
 
+    </li>
+</ul>

@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+kuis 
+1. Write 2 possible cases to do in ngOnInit lifecycle hook? 
+2. When does Angular call ngOnInit? ? ngOnInit dipanggil tepat setelah properti data-terikat direktif telah diperiksa untuk pertama kalinya, dan sebelum anak-anaknya diperiksa
+3. When does Angular call ngAfterViewInit? ngAfterViewInit () link mode_edit code A callback method that is invoked immediately after Angular has completed initialization of a component's view.
+4. When does Angular call ngOnChange? Angular ngOnChanges is a lifecycle hook called when any data-bound property of a directive changes.
