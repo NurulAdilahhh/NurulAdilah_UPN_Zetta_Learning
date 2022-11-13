@@ -1,3 +1,4 @@
+
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { map, Observable, pipe } from 'rxjs';
 import { KasirService, Selecteditem } from '../kasir.service';
@@ -22,10 +23,9 @@ export class PaymentComponent implements OnInit,AfterContentChecked {
     )
      
   }
-
-  ngOnInit(): void {
+  
+ngOnInit(): void {
   }
-
  
   
   ngAfterContentChecked() {

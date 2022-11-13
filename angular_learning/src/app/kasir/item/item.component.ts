@@ -1,7 +1,11 @@
+
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import {Observable} from 'rxjs';
 import { item, KasirService } from '../kasir.service';
 export interface items {id : number , name : string, Price : number}
+
+
+
 
 @Component({
   selector: 'app-item',

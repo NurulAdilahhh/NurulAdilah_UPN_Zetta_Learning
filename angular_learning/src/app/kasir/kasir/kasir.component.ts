@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -6,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './kasir.component.html',
   styleUrls: ['./kasir.component.scss']
 })
+
 export class KasirComponent implements OnInit {
+  
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  
-
 
 }
