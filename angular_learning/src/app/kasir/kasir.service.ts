@@ -1,5 +1,6 @@
 export interface item {id : number , name : string , Price : number}
 export interface Selecteditem {id : number , name : string , Price : number, amount : number}
+export interface employ {id : number, name : string, position : string, availability : string, action : string}
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs"
 
