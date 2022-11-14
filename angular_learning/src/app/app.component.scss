@@ -1,3 +1,4 @@
+
 *{
     scroll-behavior: smooth;
 }
@@ -15,4 +16,18 @@ mat-toolbar {
     color: #2C3333;
     height: 100%;
     padding: 2rem;
+
+h2{
+    text-align: center;
+    font-family: sans-serif
+}
+
+.container{
+    background-color: rgb(201, 201, 201);
+    width: 1700px;
+    height: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 50px;
+
 }

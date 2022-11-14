@@ -1,0 +1,43 @@
+<h1>Employe</h1>
+<table mat-table [dataSource]="employs">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let emp"> {{emp.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> name </th>
+        <td mat-cell *matCellDef="let emp"> {{emp.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> position </th>
+        <td mat-cell *matCellDef="let emp"> {{emp.position}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="availability">
+        <th mat-header-cell *matHeaderCellDef> availability </th>
+        <td mat-cell *matCellDef="let emp"> {{emp.availability}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> action </th>
+        <td mat-cell *matCellDef="let emp"> <a [routerLink]="['..','detail',emp.id]" > {{emp.action}}</a></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; colums: displayedColumns;"></tr>"
+
+</table>
+
+<!-- <ul>
+    <li *ngFor=" let employ of (employs | async) " >
+        <h3>{{ employ.name}}</h3>
+          <p>
+              Rp.{{employ.position}}
+          </p>
+          <a [routerLink] ="['..',' detail',employ.id]"> {{employ.action}}</a>
+  
+      </li>
+  </ul> -->
