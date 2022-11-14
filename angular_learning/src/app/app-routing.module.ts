@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
   {
-    path :'kasir',
-    loadChildren:()=>import('./kasir/kasir.module').then(m=> m.KasirModule),
+    path: 'user',
+    loadChildren: () => import('./user-management/user-management.module').then(module => module.UserManagementModule)
   },
   {
-    path :'**',
-    redirectTo: 'kasir'
-  },
+    path: '**',
+    redirectTo: 'user'
+  }
 ];
- 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

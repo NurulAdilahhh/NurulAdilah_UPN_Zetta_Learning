@@ -1,3 +1,22 @@
+
+*{
+    scroll-behavior: smooth;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: #242627;
+    color: #fff;
+}
+
+.content {
+    color: #2C3333;
+    height: 100%;
+    padding: 2rem;
+
 h2{
     text-align: center;
     font-family: sans-serif
@@ -10,4 +29,5 @@ h2{
     margin-right: auto;
     margin-left: auto;
     padding-right: 50px;
+
 }

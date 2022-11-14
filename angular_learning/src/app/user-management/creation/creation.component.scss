@@ -1,0 +1,92 @@
+*{
+    color: aquamarine;
+}
+
+.example-card {
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid yellow;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-back {
+    color:aqua;
+    background-color: antiquewhite;
+}
+
+.example-header-image {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fid.pinterest.com%2Fannardnael%2Faesthetic-background%2F&psig=AOvVaw0YqgHmIwmBs3SAsRRdF911&ust=1668453207447000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiHvdfuq_sCFQAAAAAdAAAAABAE ');
+    background-size: cover;
+}
+
+.btn-back:hover {
+    background-color: antiquewhite;
+    transform: scale(1.02)
+}
+
+input{
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-radio-button{
+    margin-left: 30px;
+}
+
+ul{
+    border: 1px solid yellow;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+    list-style-type: none;
+    border-radius: 5px;
+
+}
+
+li{
+    margin-top: 10px;
+}
+
+.half{
+    width: 30.5%;
+    margin-right: 19px;
+}
+
+#end{
+    margin-right: 0px;
+}
+
+.butt{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.sbm{
+    background-color: antiquewhite;
+    color: aqua;
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 600px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.sbm:hover {
+    background-color: antiquewhite;
+    transform: scale(1.02)
+}
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.atas{
+    margin-top: 20px;
+}
