@@ -76,6 +76,18 @@ export class UserEditComponent implements OnInit {
   get addres() : FormArray{
     return this.form.get('addresgrup')as FormArray
   }
+
+  adddt(tot : any) {
+    for (let index = 1; index < tot; index++) {
+      (<FormArray>this.form.get('addresgrup')).push(new FormGroup({
+        addres: new FormControl(this.list?.addresgrup[index].addres , [Validators.required]),
+        zip: new FormControl(this.list?.addresgrup[index].zip  ,[Validators.required,Validators.minLength(6),Validators.maxLength(9)]),
+        city: new FormControl(this.list?.addresgrup[index].city  ,[Validators.required]),
+        country: new FormControl(this.list?.addresgrup[index].country  ,[Validators.required])
+      }))
+      console.log();
+    }
+  }
   
   adressformgrup() : FormGroup {
     return this.fb.group({
@@ -93,6 +105,14 @@ export class UserEditComponent implements OnInit {
     this.router.navigate(['user-management','list'])
     
     
+  }
+  add() {
+    (<FormArray>this.form.get('addresgrup')).push(new FormGroup({
+      addres: new FormControl(null , [Validators.required]),
+      zip: new FormControl(null ,[Validators.required,Validators.minLength(6),Validators.maxLength(9)]),
+      city: new FormControl(null ,[Validators.required]),
+      country: new FormControl(null ,[Validators.required])
+    }))
   }
 
 
