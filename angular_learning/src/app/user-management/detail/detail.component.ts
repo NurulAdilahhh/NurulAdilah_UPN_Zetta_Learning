@@ -21,6 +21,7 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     if(typeof this.listid === 'string'){
       this.list = this.service.getListById(this.listid)
+      console.log(this.listid)
     }
    }
   
